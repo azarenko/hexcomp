@@ -1,0 +1,9 @@
+D:\projects\hexcomp\hexcomp\bin\Debug\hexcomp.exe
+D:\projects\hexcomp\hexcomp\bin\Debug\hexcomp.pdb
+D:\projects\hexcomp\hexcomp\obj\Debug\hexcomp.csprojAssemblyReference.cache
+D:\projects\hexcomp\hexcomp\obj\Debug\hexcomp.Form1.resources
+D:\projects\hexcomp\hexcomp\obj\Debug\hexcomp.Properties.Resources.resources
+D:\projects\hexcomp\hexcomp\obj\Debug\hexcomp.csproj.GenerateResource.cache
+D:\projects\hexcomp\hexcomp\obj\Debug\hexcomp.csproj.CoreCompileInputs.cache
+D:\projects\hexcomp\hexcomp\obj\Debug\hexcomp.exe
+D:\projects\hexcomp\hexcomp\obj\Debug\hexcomp.pdb
