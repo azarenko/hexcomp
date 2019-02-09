@@ -62,7 +62,8 @@ namespace hexcomp
 
             byte[] currentBytes = new byte[streams.Count];
             string[] currentConvertedBytes = new string[streams.Count];
-            List<int> shouldMarked = new List<int>();            
+            List<int> shouldMarked = new List<int>();
+            List<long> differencesAddresses = new List<long>();
             
             do
             {
@@ -87,6 +88,7 @@ namespace hexcomp
                         if (currentBytes[j - 1] != currentBytes[j])
                         {
                             shouldMarked.Add(i);
+                            differencesAddresses.Add(streams[0].Position - 1);
                             break;
                         }
                     }
@@ -116,6 +118,16 @@ namespace hexcomp
                 fs.Close();
                 fs.Dispose();
             }
+
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine(string.Format("Total differences count: {0}", differencesAddresses.Count));
+
+            foreach (long address in differencesAddresses)
+            {
+                sb.AppendLine(string.Format("0x{0}", address.ToString("X")));
+            }
+
+            logBox.Text = sb.ToString();
         }
     }
 }

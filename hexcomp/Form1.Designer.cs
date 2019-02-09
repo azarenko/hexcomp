@@ -30,13 +30,14 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.FileList = new System.Windows.Forms.TextBox();
-            this.Add = new System.Windows.Forms.Button();
-            this.Clear = new System.Windows.Forms.Button();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.Compare = new System.Windows.Forms.Button();
+            this.Clear = new System.Windows.Forms.Button();
+            this.Add = new System.Windows.Forms.Button();
+            this.FileList = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.grid = new System.Windows.Forms.DataGridView();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.logBox = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -55,11 +56,12 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 144F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1035, 659);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(726, 545);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.logBox);
             this.groupBox1.Controls.Add(this.Compare);
             this.groupBox1.Controls.Add(this.Clear);
             this.groupBox1.Controls.Add(this.Add);
@@ -67,52 +69,10 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1029, 138);
+            this.groupBox1.Size = new System.Drawing.Size(720, 138);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Files to compare";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.grid);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(3, 147);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1029, 509);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "File Content";
-            // 
-            // FileList
-            // 
-            this.FileList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.FileList.Location = new System.Drawing.Point(9, 19);
-            this.FileList.Multiline = true;
-            this.FileList.Name = "FileList";
-            this.FileList.ReadOnly = true;
-            this.FileList.Size = new System.Drawing.Size(1011, 81);
-            this.FileList.TabIndex = 0;
-            // 
-            // Add
-            // 
-            this.Add.Location = new System.Drawing.Point(9, 106);
-            this.Add.Name = "Add";
-            this.Add.Size = new System.Drawing.Size(75, 23);
-            this.Add.TabIndex = 1;
-            this.Add.Text = "Add";
-            this.Add.UseVisualStyleBackColor = true;
-            this.Add.Click += new System.EventHandler(this.Add_Click);
-            // 
-            // Clear
-            // 
-            this.Clear.Location = new System.Drawing.Point(90, 106);
-            this.Clear.Name = "Clear";
-            this.Clear.Size = new System.Drawing.Size(75, 23);
-            this.Clear.TabIndex = 2;
-            this.Clear.Text = "Clear";
-            this.Clear.UseVisualStyleBackColor = true;
-            this.Clear.Click += new System.EventHandler(this.Clear_Click);
             // 
             // Compare
             // 
@@ -124,6 +84,49 @@
             this.Compare.UseVisualStyleBackColor = true;
             this.Compare.Click += new System.EventHandler(this.Compare_Click);
             // 
+            // Clear
+            // 
+            this.Clear.Location = new System.Drawing.Point(90, 106);
+            this.Clear.Name = "Clear";
+            this.Clear.Size = new System.Drawing.Size(75, 23);
+            this.Clear.TabIndex = 2;
+            this.Clear.Text = "Clear";
+            this.Clear.UseVisualStyleBackColor = true;
+            this.Clear.Click += new System.EventHandler(this.Clear_Click);
+            // 
+            // Add
+            // 
+            this.Add.Location = new System.Drawing.Point(9, 106);
+            this.Add.Name = "Add";
+            this.Add.Size = new System.Drawing.Size(75, 23);
+            this.Add.TabIndex = 1;
+            this.Add.Text = "Add";
+            this.Add.UseVisualStyleBackColor = true;
+            this.Add.Click += new System.EventHandler(this.Add_Click);
+            // 
+            // FileList
+            // 
+            this.FileList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.FileList.Location = new System.Drawing.Point(9, 19);
+            this.FileList.Multiline = true;
+            this.FileList.Name = "FileList";
+            this.FileList.ReadOnly = true;
+            this.FileList.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.FileList.Size = new System.Drawing.Size(476, 81);
+            this.FileList.TabIndex = 0;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.grid);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox2.Location = new System.Drawing.Point(3, 147);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(720, 395);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "File Content";
+            // 
             // grid
             // 
             this.grid.AllowUserToAddRows = false;
@@ -133,14 +136,26 @@
             this.grid.Location = new System.Drawing.Point(3, 16);
             this.grid.Name = "grid";
             this.grid.ReadOnly = true;
-            this.grid.Size = new System.Drawing.Size(1023, 490);
+            this.grid.Size = new System.Drawing.Size(714, 376);
             this.grid.TabIndex = 0;
+            // 
+            // logBox
+            // 
+            this.logBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.logBox.Location = new System.Drawing.Point(491, 19);
+            this.logBox.MaxLength = 400000;
+            this.logBox.Multiline = true;
+            this.logBox.Name = "logBox";
+            this.logBox.ReadOnly = true;
+            this.logBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.logBox.Size = new System.Drawing.Size(223, 110);
+            this.logBox.TabIndex = 4;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1035, 659);
+            this.ClientSize = new System.Drawing.Size(726, 545);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Form1";
             this.Text = "HexComp by Azarenko S.A.";
@@ -164,6 +179,7 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button Compare;
         private System.Windows.Forms.DataGridView grid;
+        private System.Windows.Forms.TextBox logBox;
     }
 }
 
